@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@color/colorPrimary"
+            android:id="@+id/full_image"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:id="@+id/hero_name"
+            android:text="Super Hero"
+            android:textSize="22dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:textColor="#000"
+            android:lineHeight="4dp"
+            android:id="@+id/full_desc"
+            android:text="Super Hero"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:breakStrategy="high_quality"
+            android:textAlignment="viewStart"
+            />
+    </LinearLayout>
+
+</ScrollView>

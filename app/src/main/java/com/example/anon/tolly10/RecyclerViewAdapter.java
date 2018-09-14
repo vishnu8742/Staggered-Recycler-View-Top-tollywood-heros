@@ -1,6 +1,7 @@
 package com.example.anon.tolly10;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,11 +22,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private ArrayList<String> mImages = new ArrayList<>();
     private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mImgDesc = new ArrayList<>();
     private Context mcontext;
 
-    public RecyclerViewAdapter(Context mcontext, ArrayList<String> ImageUrls, ArrayList<String> ImageNames) {
+    public RecyclerViewAdapter(Context mcontext, ArrayList<String> ImageUrls, ArrayList<String> ImageNames, ArrayList<String> ImageDesc) {
         this.mImages = ImageUrls;
         this.mNames = ImageNames;
+        this.mImgDesc = ImageDesc;
         this.mcontext = mcontext;
     }
 
@@ -53,8 +56,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Called"+ mNames.get(position));
-
-                Toast.makeText(mcontext, mNames.get(position), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mcontext, full_desc.class);
+                intent.putExtra("image_name", mNames.get(position));
+                intent.putExtra("image_url", mImages.get(position));
+                intent.putExtra("image_desc", mImgDesc.get(position));
+                mcontext.startActivity(intent);
             }
         });
 
